@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.js"></script>
+    <title>Process bar</title>
+</head>
+<body>
+    <input type="number" id="num" onkeyup="validate()" placeholder="enter the number">
+    <input type="range" id="bar">
+    <p id="para"></p>
+
+    <script>
+        function validate(){
+            var val = document.getElementById('num').value;
+            if(val < 0 || val > 100){
+                document.getElementById('para').innerHTML = "invalid input";
+                document.getElementById('bar').value = 0;
+            }
+            else{
+                document.getElementById('bar').value = val;
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function(){
+            // $("#num").mousedown(function(){
+            //     $(this).attr('placeholder','');
+            // },
+            // $("#num").mouseup(function(){
+            //     $(this).attr('placeholder','enter the number');
+            // })
+            // );
+            $("#num").on({
+                click:function(){
+                   $(this).attr('placeholder','');
+                },
+                mouseup :function(){
+                    $(this).attr('placeholder','enter the number');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

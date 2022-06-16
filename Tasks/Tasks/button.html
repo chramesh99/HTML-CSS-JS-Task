@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <script src="jquery.js"></script>
+    <style>
+        #btn{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Click Me</button>
+    <!-- <button id="showme">showme</button> -->
+    <script>
+        $(document).ready(function(){
+            $("#btn").hover(function(){
+                $(this).css("background-color", "yellow");
+            },
+            function(){
+                $(this).css("background-color", "white");
+            }
+            );
+            $("#btn").click(function(){
+                $(this).css("background-color", "aqua");
+            });
+            // $("#btn").on({
+            //     mouseover:function(){
+            //        $(this).css( {'backgroundColor':"aqua",
+            //                       'color':'red'})
+            //     },
+            //     click :function(){
+            //         $(this).css( {'backgroundColor':"yellow",
+            //                       'color':'green'})
+            //     }
+            // });
+        });
+    </script>
+</body>
+</html>
